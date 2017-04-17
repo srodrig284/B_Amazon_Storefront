@@ -1,0 +1,24 @@
+{
+  "name": "B_Amazon_Storefront",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/srodrig284/B_Amazon_Storefront.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/srodrig284/B_Amazon_Storefront/issues"
+  },
+  "homepage": "https://github.com/srodrig284/B_Amazon_Storefront#readme",
+  "dependencies": {
+    "console.table": "^0.8.0",
+    "inquirer": "^3.0.6"
+  }
+}
