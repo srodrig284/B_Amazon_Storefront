@@ -23,7 +23,7 @@ connection.query("SELECT * FROM `products`", function(err, res) {
     if(err) throw err;
 
     console.log("\n BAMAZON ITEMS FOR SALE");
-    console.log(" ======================");
+    console.log(" ======================\n");
 
     console.table(res);
 });
