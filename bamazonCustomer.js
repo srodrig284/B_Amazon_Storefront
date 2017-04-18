@@ -83,14 +83,33 @@ function processOrder(itemId, quantityOrdered)
                     if (err)
                         throw err;
                     console.log("Purchase Successfull.  Your total order is $" + totalprice + "\n");
+                    askAgain();
                 });
         }
         else
         {
             console.log("Purchase Unsuccessful.  Insufficient quantity.\n");
+            askAgain();
         }
+    });
+}
 
-
+function askAgain()
+{
+    inquirer.prompt([
+        {
+            name: "question",
+            type: "input",
+            message: "Would you like to place another order? Y/N: "
+        }]).then(function(answer) {
+        if(answer.question.toUpperCase().valueOf() === "Y")
+        {
+            displayItems();
+        }
+        else
+        {
+            connection.end();
+        }
     });
 }
 
