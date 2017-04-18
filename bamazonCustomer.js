@@ -18,14 +18,81 @@ connection.connect(function(err) {
     if (err) throw err;
 });
 
+var totalprice = 0;
 
-connection.query("SELECT * FROM `products`", function(err, res) {
-    if(err) throw err;
 
-    console.log("\n BAMAZON ITEMS FOR SALE");
-    console.log(" ======================\n");
+function displayItems() {
+    connection.query("SELECT * FROM `products`", function (err, res) {
+        if (err) throw err;
 
-    console.table(res);
-});
+        console.log("\n BAMAZON ITEMS FOR SALE");
+        console.log(" ======================\n");
 
-connection.end();
+        console.table(res);
+        queryCustomer();
+    });
+}
+
+function queryCustomer()
+{
+    inquirer.prompt([
+    {
+        name: "item",
+        type: "input",
+        message: "What is the item ID you would like to purchase?",
+        validate: function(value) {
+            if (isNaN(value) === false) {
+                return true;
+            }
+            return false;
+        }
+    },
+    {
+        name: "quantity",
+        type: "input",
+        message: "How many units would you like to purchase?",
+        validate: function(value) {
+            if (isNaN(value) === false) {
+                return true;
+            }
+            return false;
+        }
+    }]).then(function(answer) {
+        processOrder(answer.item, answer.quantity);
+    });
+}
+
+function processOrder(itemId, quantityOrdered)
+{
+    connection.query("SELECT * FROM `products` WHERE ?",{id: itemId}, function (err, res)
+    {
+        if (err) throw err;
+
+        if(quantityOrdered < res[0].stock_quantity)
+        {
+            var newQuantity = res[0].stock_quantity - quantityOrdered;
+            totalprice = quantityOrdered * res[0].price;
+            connection.query("UPDATE products SET ? WHERE ?",
+                [{
+                    stock_quantity: newQuantity
+                 },
+                 {
+                    id: itemId
+                 }],
+                function(err, res) {
+                    if (err)
+                        throw err;
+                    console.log("Purchase Successfull.  Your total order is $" + totalprice + "\n");
+                });
+        }
+        else
+        {
+            console.log("Purchase Unsuccessful.  Insufficient quantity.\n");
+        }
+
+
+    });
+}
+
+displayItems();
+//connection.end();
