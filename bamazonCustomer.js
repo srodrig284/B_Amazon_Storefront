@@ -18,8 +18,6 @@ connection.connect(function(err) {
     if (err) throw err;
 });
 
-var totalprice = 0;
-
 
 function displayItems() {80
     connection.query("SELECT `item_id` as `Item ID`, `product_name` as `Product`, `price` as `Price` FROM `products`", function (err, res) {
@@ -92,11 +90,15 @@ function processOrder(itemId, quantityOrdered)
         if(quantityOrdered < res[0].stock_quantity)
         {
             var newQuantity = res[0].stock_quantity - quantityOrdered;
-            totalprice = quantityOrdered * res[0].price;
-            connection.query("UPDATE products SET ? WHERE ?",
+            var totalprice = quantityOrdered * res[0].price;
+            var totalsales = res[0].product_sales + totalprice;
+            connection.query("UPDATE products SET ?, ? WHERE ?",
                 [{
                     stock_quantity: newQuantity
                  },
+                {
+                  product_sales: totalsales
+                },
                  {
                     item_id: itemId
                  }],
