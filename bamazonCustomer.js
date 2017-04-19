@@ -29,7 +29,28 @@ function displayItems() {80
         console.log(" ======================\n");
 
         console.table(res);
-        queryCustomer();
+        // prompt customer
+        inquirer.prompt([
+        {
+            name: "choice",
+            type: "rawlist",
+            message: "What would you like to do?",
+            choices: ["Purchase an Item", "Redisplay Items" ,"Quit"]
+        }]).then(function(answer) {
+            if(answer.choice === "Purchase an Item")
+            {
+                queryCustomer();
+            }
+            else if(answer.choice === "Redisplay Items")
+            {
+                displayItems();
+            }
+            else{
+                connection.end();
+            }
+        })
+
+
     });
 }
 
@@ -64,7 +85,7 @@ function queryCustomer()
 
 function processOrder(itemId, quantityOrdered)
 {
-    connection.query("SELECT * FROM `products` WHERE ?",{id: itemId}, function (err, res)
+    connection.query("SELECT * FROM `products` WHERE ?",{item_id: itemId}, function (err, res)
     {
         if (err) throw err;
 
@@ -77,7 +98,7 @@ function processOrder(itemId, quantityOrdered)
                     stock_quantity: newQuantity
                  },
                  {
-                    id: itemId
+                    item_id: itemId
                  }],
                 function(err, res) {
                     if (err)

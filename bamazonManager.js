@@ -53,7 +53,7 @@ function queryManager()
 }
 
 function displayProducts() {
-    connection.query("SELECT * FROM `products`", function (err, res) {
+    connection.query("SELECT `item_id` as `Item ID`, `product_name` as `Product`, `department_name` as `Department`, `price` as `Price`, `stock_quantity` as `Inventory` FROM `products`", function (err, res) {
         if (err) throw err;
 
         console.log("PRODUCTS INVENTORY\n==================");
@@ -64,7 +64,7 @@ function displayProducts() {
 
 function displayLowInventory()
 {
-    connection.query("SELECT * FROM `products` WHERE `stock_quantity` < 5", function (err, res) {
+    connection.query("SELECT `item_id` as `Item ID`, `product_name` as `Product`, `department_name` as `Department`, `price` as `Price`, `stock_quantity` as `Inventory` FROM `products` WHERE `stock_quantity` < 5", function (err, res) {
         if (err) throw err;
 
         console.log("\nLOW INVENTORY\n==================");
