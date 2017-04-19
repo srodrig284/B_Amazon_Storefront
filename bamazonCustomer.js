@@ -19,6 +19,9 @@ connection.connect(function(err) {
 });
 
 
+/**
+ * displayItems will display the items for sale
+ */
 function displayItems() {80
     connection.query("SELECT `item_id` as `Item ID`, `product_name` as `Product`, `price` as `Price` FROM `products`", function (err, res) {
         if (err) throw err;
@@ -52,6 +55,9 @@ function displayItems() {80
     });
 }
 
+/**
+ * queryCustomer will ask the customer what they want to do
+ */
 function queryCustomer()
 {
     inquirer.prompt([
@@ -81,6 +87,13 @@ function queryCustomer()
     });
 }
 
+
+/**
+ * processOrder will process the order placed by the customer
+ *
+ * @param itemId
+ * @param quantityOrdered
+ */
 function processOrder(itemId, quantityOrdered)
 {
     connection.query("SELECT * FROM `products` WHERE ?",{item_id: itemId}, function (err, res)
@@ -89,6 +102,7 @@ function processOrder(itemId, quantityOrdered)
 
         if(quantityOrdered < res[0].stock_quantity)
         {
+            var dept = res[0].department_name;
             var newQuantity = res[0].stock_quantity - quantityOrdered;
             var totalprice = quantityOrdered * res[0].price;
             var totalsales = res[0].product_sales + totalprice;
@@ -96,18 +110,40 @@ function processOrder(itemId, quantityOrdered)
                 [{
                     stock_quantity: newQuantity
                  },
-                {
-                  product_sales: totalsales
-                },
+                 {
+                    product_sales: totalsales
+                 },
                  {
                     item_id: itemId
                  }],
                 function(err, res) {
                     if (err)
                         throw err;
-                    console.log("Purchase Successfull.  Your total order is $" + totalprice + "\n");
-                    askAgain();
+            });
+
+            connection.query("SELECT * FROM `departments` WHERE ?", {department_name: dept},
+                function (err, res2) {
+                    if (err)
+                        throw err;
+
+                var deptsales = res2[0].total_sales;
+                deptsales += totalprice;
+                    console.log("deptsales = ", deptsales);
+                connection.query("UPDATE `departments` SET ? WHERE ?",
+                    [{
+                        total_sales: deptsales
+                     },
+                     {
+                        department_name: dept
+                     }],
+                    function (err, res3)
+                    {
+                        if (err)
+                            throw err;
+                        console.log("Purchase Successfull.  Your total order is $" + totalprice + "\n");
+                        askAgain();
                 });
+            });
         }
         else
         {
@@ -117,6 +153,10 @@ function processOrder(itemId, quantityOrdered)
     });
 }
 
+
+/**
+ * askAgain will ask the customer if they want to place another order
+ */
 function askAgain()
 {
     inquirer.prompt([
