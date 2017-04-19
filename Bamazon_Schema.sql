@@ -3,12 +3,12 @@ CREATE database `bamazonDB`;
 USE `bamazonDB`;
 
 CREATE TABLE `products` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `product_name` VARCHAR(200) NOT NULL,
+  `item_id` INT NOT NULL AUTO_INCREMENT,
+  `product_name` VARCHAR(100) NOT NULL,
   `department_name` VARCHAR(100) NOT NULL,
   `price` DECIMAL(10,2) DEFAULT 0,
   `stock_quantity` INT DEFAULT 0,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`item_id`)
 );
 
 INSERT INTO `products` (`product_name`, `department_name`, `price`, `stock_quantity`)
@@ -36,7 +36,7 @@ INSERT INTO `products` (`product_name`, `department_name`, `price`, `stock_quant
 VALUES ("Oneida Mooncrest 45-Piece Flatware Set, Service for 8", "Home, Garden and Tools", 52.99, 100);
 
 INSERT INTO `products` (`product_name`, `department_name`, `price`, `stock_quantity`)
-VALUES ("Ashley Massaro Signed WWE 8x10 Photo COA 2007 Playboy Magazine Picture - Autographed Wrestling Photos", "Collectibles & Fine Art", 54.99, 100);
+VALUES ("Ashley Massaro Signed WWE 8x10 Photo COA 2007 Playboy Magazine Picture", "Collectibles & Fine Art", 54.99, 100);
 
 INSERT INTO `products` (`product_name`, `department_name`, `price`, `stock_quantity`)
 VALUES ("OxGord Pet Bed with Cozy Inner Cushion - 24 Inch", "Pet Supplies", 15.99, 100);

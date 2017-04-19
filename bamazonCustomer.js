@@ -21,8 +21,8 @@ connection.connect(function(err) {
 var totalprice = 0;
 
 
-function displayItems() {
-    connection.query("SELECT * FROM `products`", function (err, res) {
+function displayItems() {80
+    connection.query("SELECT `item_id` as `Item ID`, `product_name` as `Product`, `price` as `Price` FROM `products`", function (err, res) {
         if (err) throw err;
 
         console.log("\n BAMAZON ITEMS FOR SALE");
