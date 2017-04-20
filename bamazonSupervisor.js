@@ -52,7 +52,13 @@ function querySupervisor()
  */
 function displayProductsales()
 {
+    connection.query("SELECT `department_id` as `Department ID`, `department_name` as `Department Name`, `over_head_costs` as `Overhead Costs`, `total_sales` as `Product Sales`, (total_sales - over_head_costs) as `Total Profit` FROM `departments`", function (err, res) {
+        if (err) throw err;
 
+        console.log("\nPRODUCT SALES BY DEPARTMENT\n===========================");
+        console.table(res);
+        querySupervisor();
+    });
 }
 
 /**
@@ -60,7 +66,35 @@ function displayProductsales()
  */
 function createNewDept()
 {
-
+    inquirer.prompt([
+        {
+            name: "deptName",
+            type: "input",
+            message: "Enter department name: "
+        },
+        {
+            name: "overhead",
+            type: "input",
+            message: "Enter department overhead costs: ",
+            validate: function(value){
+                var regex  = /^\d+(?:\.\d{0,2})$/;
+                if (regex.test(value)){
+                    return true;
+                }
+                return false;
+            }
+        }
+    ]).then(function(answer) {
+        connection.query("INSERT INTO departments SET ?", {
+            department_name: answer.deptName,
+            over_head_costs: answer.overhead
+        }, function(err, res) {
+            if (err)
+                throw err;
+            console.log("Department was added successfully.\n");
+            querySupervisor();
+        });
+    });
 }
 
 querySupervisor();

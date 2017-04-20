@@ -61,7 +61,7 @@ function displayProducts() {
     connection.query("SELECT `item_id` as `Item ID`, `product_name` as `Product`, `department_name` as `Department`, `price` as `Price`, `stock_quantity` as `Inventory` FROM `products`", function (err, res) {
         if (err) throw err;
 
-        console.log("PRODUCTS INVENTORY\n==================");
+        console.log("\nPRODUCTS INVENTORY\n==================");
         console.table(res);
         queryManager();
     });
@@ -182,7 +182,7 @@ function addNewProduct()
             }, function(err, res) {
                 if (err)
                     throw err;
-                console.log("Product added successfully.\n");
+                console.log("Product was added successfully.\n");
                 queryManager();
             });
     });
