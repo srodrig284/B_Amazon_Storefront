@@ -54,19 +54,3 @@ There are 3 node applications:
         2) Create New Department
         3) Quit
 
-
-- - -
-
-#### Demo Videos
-
-  ##### Customer Demo
-  
-  ![Demo Video](https://raw.github.com/srodrig284/B_Amazon_Storefront/master/customerDemo.mov?raw=true "Customer Demo")
-  
-  ##### Manager Demo
-  
-  ![Demo Video](https://raw.github.com/srodrig284/B_Amazon_Storefront/master/managerDemo.mov?raw=true "Manager Demo")
-  
-  ##### Supervisor Demo
-  
-  ![Demo Video](https://raw.github.com/srodrig284/B_Amazon_Storefront/master/supervisorDemo.mov?raw=true "Supervisor Demo")
