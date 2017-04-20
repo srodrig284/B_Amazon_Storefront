@@ -58,4 +58,5 @@ There are 3 node applications:
 
 ### Bamazon Demo Video
 
- ![Bamazon Demo Video](https://youtu.be/1BUH7l9KcI8)
+ [Bamazon Demo Video](https://youtu.be/1BUH7l9KcI8)
+ 
