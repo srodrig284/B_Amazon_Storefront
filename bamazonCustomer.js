@@ -128,7 +128,6 @@ function processOrder(itemId, quantityOrdered)
 
                 var deptsales = res2[0].total_sales;
                 deptsales += totalprice;
-                    console.log("deptsales = ", deptsales);
                 connection.query("UPDATE `departments` SET ? WHERE ?",
                     [{
                         total_sales: deptsales
