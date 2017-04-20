@@ -2,21 +2,17 @@
 
 Bamazon storefront is an Amazon-like storefront.  It uses a MySql database called bamazonDB.  BamazonDB contains two tables - products table and departments table.
 
-####PRODUCTS TABLE SCREENSHOT
+#### PRODUCTS TABLE SCREENSHOT
 
-<h1 align="center">
-  <img src="https://github.com/srodrig284/B_Amazon_Storefront/master/productstable.png" alt="Products Table Screenshot">
-</h1>
+  ![Products Table Screenshot](https://raw.github.com/srodrig284/B_Amazon_Storefront/master/productstable.png?raw=true "Products Table Screenshot")   
 
-####DEPARTMENTS TABLE SCREENSHOT
+#### DEPARTMENTS TABLE SCREENSHOT
 
-<h1 align="center">
-  <img src="https://github.com/srodrig284/B_Amazon_Storefront/master/deptstable.png" alt="Departments Table Screenshot">
-</h1>
+  ![Departments Table Screenshot](https://raw.github.com/srodrig284/B_Amazon_Storefront/master/deptstable.png?raw=true "Departments Table Screenshot")   
 
 - - -
 
-####Applications
+#### Applications
 
 There are 3 node applications:
 
@@ -27,10 +23,8 @@ There are 3 node applications:
         1) Purchase an Item
         2) Redisplay Items
 
- <h1 align="center">
-   <img src="https://github.com/srodrig284/B_Amazon_Storefront/master/itemsforsale.png" alt="Items for sale Screenshot">
- </h1>
-       
+  ![Items for sale Screenshot](https://raw.github.com/srodrig284/B_Amazon_Storefront/master/itemsforsale.png?raw=true "Items for sale Screenshot")   
+    
         3) Quit
 
 * bamazonManager.js
@@ -38,10 +32,8 @@ There are 3 node applications:
     The manager has the following options:
     
         1) View Products for Sale
-
- <h1 align="center">
-   <img src="https://github.com/srodrig284/B_Amazon_Storefront/master/managerinventory.png" alt="Products Inventory Screenshot">
- </h1>
+ 
+  ![Products Inventory Screenshot](https://raw.github.com/srodrig284/B_Amazon_Storefront/master/managerinventory.png?raw=true "Products Inventory Screenshot")
         
         2) View Low Inventory
         
@@ -65,6 +57,6 @@ There are 3 node applications:
 
 - - -
 
-####Demo Video
+#### Demo Video
 
   ![Demo Video](https://raw.github.com/srodrig284/B_Amazon_Storefront/master/BamazonDemo.mov?raw=true "Demo Video")
