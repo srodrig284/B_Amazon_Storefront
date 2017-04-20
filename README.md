@@ -4,12 +4,15 @@ Bamazon storefront is an Amazon-like storefront.  It uses a MySql database calle
 
 ####PRODUCTS TABLE SCREENSHOT
 
-![Products Table Screenshot](https://raw.github.com/srodrig284/B_Amazon_Storefront/productstable.png?raw=true "Products Table Screenshot")
-
+<h1 align="center">
+  <img src="https://github.com/srodrig284/B_Amazon_Storefront/productstable.png" alt="Products Table Screenshot">
+</h1>
 
 ####DEPARTMENTS TABLE SCREENSHOT
 
-![Departments Table Screenshot](https://raw.github.com/srodrig284/B_Amazon_Storefront/deptstable.png?raw=true "Products Table Screenshot")
+<h1 align="center">
+  <img src="https://github.com/srodrig284/B_Amazon_Storefront/deptstable.png" alt="Departments Table Screenshot">
+</h1>
 
 - - -
 
@@ -23,9 +26,11 @@ There are 3 node applications:
     
         1) Purchase an Item
         2) Redisplay Items
-        
-  ![Items for sale Screenshot](https://raw.github.com/srodrig284/B_Amazon_Storefront/itemsforsale.png?raw=true "Items for sale Screenshot")
-        
+
+ <h1 align="center">
+   <img src="https://github.com/srodrig284/B_Amazon_Storefront/itemsforsale.png" alt="Items for sale Screenshot">
+ </h1>
+       
         3) Quit
 
 * bamazonManager.js
@@ -34,11 +39,13 @@ There are 3 node applications:
     
         1) View Products for Sale
 
- ![Products Inventory Screenshot](https://raw.github.com/srodrig284/B_Amazon_Storefront/mangerinventory.png?raw=true "Products Inventory Screenshot")
+ <h1 align="center">
+   <img src="https://github.com/srodrig284/B_Amazon_Storefront/mangerinventory.png" alt="Products Inventory Screenshot">
+ </h1>
         
         2) View Low Inventory
         
-  ![Low Inventory Screenshot](https://raw.github.com/srodrig284/B_Amazon_Storefront/lowinventory.png?raw=true "Low Inventory Screenshot")
+  ![Low Inventory Screenshot](https://github.com/srodrig284/B_Amazon_Storefront/lowinventory.png?raw=true "Low Inventory Screenshot")
             
         3) Add to Inventory
         4) Add New Product
