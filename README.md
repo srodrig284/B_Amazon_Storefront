@@ -1,6 +1,6 @@
 # B_Amazon_Storefront
 
-Bamazon storefront is an Amazon-like storefront.  It uses a MySql database called bamazonDB.  BamazonDB contains two tables - products table and departments table.
+### Bamazon storefront is an Amazon-like storefront.  It uses a MySql database called bamazonDB.  BamazonDB contains two tables - products table and departments table.
 
 #### PRODUCTS TABLE SCREENSHOT
 
