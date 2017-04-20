@@ -12,11 +12,11 @@
 
 - - -
 
-#### Applications
+### Applications
 
 There are 3 node applications:
 
-* bamazonCustomer.js
+####  * bamazonCustomer.js
 
     The customer has the following options:
     
@@ -27,7 +27,7 @@ There are 3 node applications:
     
         3) Quit
 
-* bamazonManager.js
+#### * bamazonManager.js
     
     The manager has the following options:
     
@@ -43,7 +43,7 @@ There are 3 node applications:
         4) Add New Product
         5) Quit
 
-* bamazonSupervisor.js
+#### * bamazonSupervisor.js
 
     The supervisor has the following options:
     
