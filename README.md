@@ -57,6 +57,16 @@ There are 3 node applications:
 
 - - -
 
-#### Demo Video
+#### Demo Videos
 
-  ![Demo Video](https://raw.github.com/srodrig284/B_Amazon_Storefront/master/BamazonDemo.mov?raw=true "Demo Video")
+  ##### Customer Demo
+  
+  ![Demo Video](https://raw.github.com/srodrig284/B_Amazon_Storefront/master/customerDemo.mov?raw=true "Customer Demo")
+  
+  ##### Manager Demo
+  
+  ![Demo Video](https://raw.github.com/srodrig284/B_Amazon_Storefront/master/managerDemo.mov?raw=true "Manager Demo")
+  
+  ##### Supervisor Demo
+  
+  ![Demo Video](https://raw.github.com/srodrig284/B_Amazon_Storefront/master/supervisorDemo.mov?raw=true "Supervisor Demo")
