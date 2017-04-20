@@ -54,3 +54,8 @@ There are 3 node applications:
         2) Create New Department
         3) Quit
 
+- - -
+
+### Bamazon Demo Video
+
+ ![Bamazon Demo Video](https://youtu.be/1BUH7l9KcI8?raw=true "Bamazon Demo Video")
