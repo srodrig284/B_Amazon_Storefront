@@ -40,7 +40,7 @@ There are 3 node applications:
         1) View Products for Sale
 
  <h1 align="center">
-   <img src="https://github.com/srodrig284/B_Amazon_Storefront/mangerinventory.png" alt="Products Inventory Screenshot">
+   <img src="https://github.com/srodrig284/B_Amazon_Storefront/managerinventory.png" alt="Products Inventory Screenshot">
  </h1>
         
         2) View Low Inventory
